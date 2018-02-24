@@ -1,5 +1,3 @@
-//Copyright 2018 <Shunji Lin>
-
 #include <gmock/gmock.h>
 #include "Karatsuba.hpp"
 
