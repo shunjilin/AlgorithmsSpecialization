@@ -1,6 +1,6 @@
 include_directories("../include")
 
-add_executable(KaratsubaTest KaratsubaTest.cpp)
-add_executable(StressTest StressTest.cpp)
+add_executable(KaratsubaUnitTest KaratsubaUnitTest.cpp)
+add_executable(KaratsubaStressTest KaratsubaStressTest.cpp)
 
-target_link_libraries(KaratsubaTest gmock pthread)
+target_link_libraries(KaratsubaUnitTest gmock pthread)
