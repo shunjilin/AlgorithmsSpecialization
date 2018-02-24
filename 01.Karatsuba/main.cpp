@@ -28,6 +28,6 @@ int main(int argc, char *argv[])
     auto result = Karatsuba::multiply(number_one, number_two);
     auto time_taken = timer.getMs();
     std::cout << number_one << " * " << number_two<< " =\n"
-              << result  << std::endl;
-    std::cout << "Time taken: " << timer.getMs() << "ms" << std::endl;
+              << result  << "\n";
+    std::cout << "Time taken: " << timer.getMs() << "ms\n";
 }
