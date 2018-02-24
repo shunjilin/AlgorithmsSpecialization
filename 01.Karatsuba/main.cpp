@@ -1,9 +1,8 @@
 #include <iostream>
 #include <fstream>
-#include <utility>
 #include <string>
-#include <tuple>
-#include "include/Karatsuba.hpp"
+#include "Karatsuba.hpp"
+#include "steadyClockTimer.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -23,7 +22,12 @@ int main(int argc, char *argv[])
         std::cerr << "No input given!" << std::endl;
         exit(1);
     }
+
+    SteadyClockTimer timer;
+    timer.start();
+    auto result = Karatsuba::multiply(number_one, number_two);
+    auto time_taken = timer.getMs();
     std::cout << number_one << " * " << number_two<< " =\n"
-              << Karatsuba::multiply(number_one, number_two) << std::endl;
-    
+              << result  << std::endl;
+    std::cout << "Time taken: " << timer.getMs() << "ms" << std::endl;
 }
