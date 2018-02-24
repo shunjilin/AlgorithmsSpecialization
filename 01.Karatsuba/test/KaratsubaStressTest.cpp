@@ -30,8 +30,8 @@ int main(int argc, char *argv[])
         auto y_string = std::to_string(y);
 
         auto karatsuba = Karatsuba::multiply(x_string, y_string);
-        auto actual = Multiply(x_string, y_string);
-        if (karatsuba == actual) {
+        auto expected = Multiply(x_string, y_string);
+        if (karatsuba == expected) {
             std::cout << "OK\n";
         } else {
             std::cout << "WRONG\n";
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
         }
         std::cout << x_string << " * " << y_string << "\n";
         std::cout << "Karatsuba: " << karatsuba
-                  << " Actual: " << actual << "\n";
+                  << " Expected: " << expected << "\n";
     } 
     return 0;
 }
