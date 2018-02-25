@@ -58,8 +58,5 @@ namespace MergeSort {
         sort(begin, end, &inversion_count, comp);
         return inversion_count;
     }
-
-    
-
 };
 #endif
