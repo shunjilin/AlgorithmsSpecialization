@@ -10,7 +10,6 @@ public:
     std::string even_two = "9876";
     std::string odd_one = "321";
     std::string odd_two = "876";
-    std::deque<char>untruncated = {0, 0, 1, 0, 0, 0};
 };
 
 TEST_F(KaratsubaInitialize, EncodeNumberCorrectly) {
@@ -22,6 +21,7 @@ TEST_F(KaratsubaInitialize, DecodeNumberCorrectly) {
 }
 
 TEST_F(KaratsubaInitialize, TruncateCorrectly) {
+    std::deque<char>untruncated = {0, 0, 1, 0, 0, 0};
     truncate(untruncated);
     ASSERT_THAT(untruncated.size(), 3);
 }
