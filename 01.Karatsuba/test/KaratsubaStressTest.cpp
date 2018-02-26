@@ -1,8 +1,5 @@
 #include <string>
-#include <random>
-#include <array>
 #include <limits>
-#include <functional>
 #include <iostream>
 #include "Karatsuba.hpp"
 #include "UniformRandom.hpp"

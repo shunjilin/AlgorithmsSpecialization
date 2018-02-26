@@ -2,6 +2,8 @@
 #define UNIFORM_RANDOM_HPP
 
 #include <random>
+#include <array>
+#include <functional>
 
 template<typename T>
 class UniformRandom {
