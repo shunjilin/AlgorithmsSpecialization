@@ -7,8 +7,8 @@
 #include "MergeSort.hpp"
 
 //naive O(n^2) method
-int countInversions(const std::vector<int>& numbers) {
-    int inversion_count = 0;
+unsigned long long countInversions(const std::vector<int>& numbers) {
+    unsigned long long inversion_count = 0;
     for (std::size_t i = 0; i < numbers.size(); ++i) {
         for (auto j = i; j < numbers.size(); ++j) {
             if (numbers[j] < numbers[i]) ++inversion_count;
@@ -18,7 +18,7 @@ int countInversions(const std::vector<int>& numbers) {
 }
 
 int main() {
-    UniformRandom<unsigned> vector_size_rng(0, 100);
+    UniformRandom<unsigned> vector_size_rng(0, 10000);
     UniformRandom<int> number_rng(0, std::numeric_limits<int>::max());
 
     for (int i = 0; i < 10000; ++i) {
