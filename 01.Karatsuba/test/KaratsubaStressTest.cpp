@@ -1,10 +1,11 @@
 #include <string>
-#include "Karatsuba.hpp"
 #include <random>
 #include <array>
 #include <limits>
 #include <functional>
 #include <iostream>
+#include "Karatsuba.hpp"
+#include "UniformRandom.hpp"
 
 std::string Multiply(std::string number_one, std::string number_two) {
     auto x = std::stoull(number_one);
@@ -15,17 +16,11 @@ std::string Multiply(std::string number_one, std::string number_two) {
 
 int main(int argc, char *argv[])
 {
-    std::random_device rd;
-    std::array<int, std::mt19937::state_size> seed_data {};
-    std::generate(std::begin(seed_data), std::end(seed_data), std::ref(rd));
-    std::seed_seq seq(std::begin(seed_data), std::end(seed_data));
-    auto eng = std::mt19937{seq};
-    auto dist = std::uniform_int_distribution<unsigned>
-        {0, std::numeric_limits<unsigned>::max()};
+    UniformRandom<unsigned> rng(0, std::numeric_limits<unsigned>::max());
 
     for (int i = 0; i < 10000; ++i) {
-        auto x = dist(eng);
-        auto y = dist(eng);
+        auto x = rng.generate();
+        auto y = rng.generate();
         auto x_string = std::to_string(x);
         auto y_string = std::to_string(y);
 
