@@ -27,11 +27,11 @@ int main(int argc, char *argv[])
             std::cout << "OK\n";
         } else {
             std::cout << "WRONG\n";
-            break;
         }
         std::cout << x_string << " * " << y_string << "\n";
         std::cout << "Karatsuba: " << karatsuba
                   << " Expected: " << expected << "\n";
+        if (karatsuba != expected) break;
     } 
     return 0;
 }
