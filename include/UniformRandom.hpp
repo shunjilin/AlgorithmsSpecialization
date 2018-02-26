@@ -17,8 +17,8 @@ public:
             std::generate(std::begin(seed_data), std::end(seed_data), std::ref(rd));
             std::seed_seq seq(std::begin(seed_data), std::end(seed_data));
             eng = std::mt19937{seq};
-            dist = std::uniform_int_distribution<unsigned>
-                {0, std::numeric_limits<unsigned>::max()};
+            dist = std::uniform_int_distribution<T>
+                {range_start, range_end};
     }
 
     T generate() {
