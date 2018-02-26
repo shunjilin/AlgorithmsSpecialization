@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include "Karatsuba.hpp"
-#include "steadyClockTimer.hpp"
+#include "SteadyClockTimer.hpp"
 
 int main(int argc, char *argv[])
 {
