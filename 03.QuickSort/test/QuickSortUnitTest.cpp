@@ -34,8 +34,8 @@ TEST_F(QuickSortInitialize, GetMidReturnsCorrectOnEven) {
 }
 
 TEST_F(QuickSortInitialize, GetMedianOfThreeReturnsCorrect) {
-    ASSERT_THAT(*QuickSort::getMedianOfThree(std::begin(odd),
-                                             std::begin(odd) + 1,
+    ASSERT_THAT(*QuickSort::getMedianOfThree(std::begin(odd) + 1,
+                                             std::begin(odd),
                                              std::begin(odd) + 2,
                                              std::less<int>()),
                 2);

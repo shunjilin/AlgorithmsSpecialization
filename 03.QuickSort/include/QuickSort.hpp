@@ -14,12 +14,12 @@ namespace QuickSort {
     template <typename I, typename Compare>
     I getMedianOfThree(const I one, const I two, const I three,
                        Compare comp) {
-        auto min = std::max(std::min(*one, *two, comp),
+        auto median = std::max(std::min(*one, *two, comp),
                             std::min(std::max(*one, *two, comp),
                                      *three, comp), comp);
-        if (*one == min) return one;
-        if (*two == min) return two;
-        if (*three == min) return three;
+        if (*one == median) return one;
+        if (*two == median) return two;
+        if (*three == median) return three;
     }
     
     template <typename I, typename Compare = std::less<typename I::value_type> >
@@ -44,7 +44,7 @@ namespace QuickSort {
             if (begin == end) {
                 return end;
             } else {
-                return getMedianOfThree(begin, getMid(begin, end), end, comp);
+                return getMedianOfThree(begin, getMid(begin, end), end-1, comp);
             }
         }
     };

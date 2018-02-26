@@ -4,6 +4,7 @@
 #include <random>
 #include <array>
 #include <functional>
+#include <algorithm>
 
 template<typename T>
 class UniformRandom {
