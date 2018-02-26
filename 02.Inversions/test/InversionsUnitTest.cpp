@@ -8,6 +8,8 @@ class InversionsInitialize: public Test {
 public:
     std::vector<int> numbers = {4, 7, 3, 1, 6, 2, 8, 5};
     std::vector<int> numbers_small = {3, 2, 1, 4};
+    std::vector<int> numbers_with_duplicates = {3, 1, 2, 3, 1, 2};
+    std::vector<int> numbers_with_negatives = {0, -1, 1, -2, 2};
 };
 
 TEST_F(InversionsInitialize, MergeTwoSortedListsCorrectly) {
@@ -30,6 +32,26 @@ TEST_F(InversionsInitialize, ReturnCorrectInverseCount) {
                                                   std::end(numbers_small)),
                 3);
 }
+
+TEST_F(InversionsInitialize, ReturnCorrectInverseCountOnDuplicates) {
+    auto inversion_count =
+        MergeSort::sortAndGetInversionCount
+                (std::begin(numbers_with_duplicates),
+                 std::end(numbers_with_duplicates));
+    EXPECT_THAT(numbers_with_duplicates, ElementsAre(1, 1, 2, 2, 3, 3));
+    ASSERT_THAT(inversion_count, 7);
+}
+
+TEST_F(InversionsInitialize, ReturnCorrectInverseCountOnNegatives) {
+    auto inversion_count =
+        MergeSort::sortAndGetInversionCount
+                (std::begin(numbers_with_negatives),
+                 std::end(numbers_with_negatives));
+    EXPECT_THAT(numbers_with_negatives, ElementsAre(-2, -1, 0, 1, 2));
+    ASSERT_THAT(inversion_count, 4);
+}
+
+
 
 int main(int argc, char *argv[]) {
     testing::InitGoogleMock(&argc, argv);

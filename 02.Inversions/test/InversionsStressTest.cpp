@@ -19,7 +19,7 @@ unsigned long long countInversions(const std::vector<int>& numbers) {
 
 int main() {
     UniformRandom<unsigned> vector_size_rng(0, 10000);
-    UniformRandom<int> number_rng(0, std::numeric_limits<int>::max());
+    UniformRandom<int> number_rng(-1000, 1000);
 
     for (int i = 0; i < 10000; ++i) {
         std::vector<int> numbers(vector_size_rng.generate());
@@ -34,6 +34,10 @@ int main() {
             std::cout << "OK\n";
         } else {
             std::cout << "WRONG\n";
+            for (auto number : numbers) {
+                std::cout << number << " ";
+            }
+            std::cout << "\n";
         }
         std::cout << "Expected: " << expected
                   << " Actual: " << actual << "\n";
