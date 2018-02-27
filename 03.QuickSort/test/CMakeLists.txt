@@ -1,5 +1,3 @@
-include_directories("../include")
-
 add_executable(QuickSortUnitTest QuickSortUnitTest.cpp)
 add_executable(QuickSortStressTest QuickSortStressTest.cpp)
 

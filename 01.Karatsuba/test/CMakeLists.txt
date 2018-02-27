@@ -1,5 +1,3 @@
-include_directories("../include")
-
 add_executable(KaratsubaUnitTest KaratsubaUnitTest.cpp)
 add_executable(KaratsubaStressTest KaratsubaStressTest.cpp)
 
