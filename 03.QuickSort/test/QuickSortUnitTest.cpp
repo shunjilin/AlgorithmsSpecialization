@@ -57,23 +57,20 @@ TEST_F(QuickSortInitialize, PartitionSmallCorrectly) {
 
 TEST_F(QuickSortInitialize, QuickSorFirstPivotSortsCorrectly) {
     QuickSort::sort(std::begin(numbers), std::end(numbers),
-                    QuickSort::firstPivot<std::vector<int>::iterator>(),
-                    std::less<int>());
+                    QuickSort::firstPivot<std::vector<int>::iterator>());
     ASSERT_THAT(numbers, ElementsAre(1, 2, 3, 4, 5, 6, 7, 8));
 }
 
 TEST_F(QuickSortInitialize, QuickSorLastPivotSortsCorrectly) {
     QuickSort::sort(std::begin(numbers), std::end(numbers),
-                    QuickSort::lastPivot<std::vector<int>::iterator>(),
-                    std::less<int>());
+                    QuickSort::lastPivot<std::vector<int>::iterator>());
     ASSERT_THAT(numbers, ElementsAre(1, 2, 3, 4, 5, 6, 7, 8));
 }
 
 TEST_F(QuickSortInitialize, QuickSorMedianOfThreePivotSortsCorrectly) {
     QuickSort::sort(std::begin(numbers), std::end(numbers),
                     QuickSort::medianOfThreePivot<std::vector<int>::iterator,
-                    std::less<int> >(),
-                    std::less<int>());
+                    std::less<int> >());
     ASSERT_THAT(numbers, ElementsAre(1, 2, 3, 4, 5, 6, 7, 8));
 }
 
@@ -82,7 +79,7 @@ TEST_F(QuickSortInitialize, ComparisonCountAccurate) {
     unsigned long long comparisons = 0;
     QuickSort::sort(std::begin(already_sorted), std::end(already_sorted),
                     QuickSort::firstPivot<std::vector<int>::iterator>(),
-                    std::less<int>(), &comparisons);
+                    &comparisons);
     ASSERT_THAT(comparisons, 28);
 }
 

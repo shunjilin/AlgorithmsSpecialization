@@ -21,16 +21,16 @@ int main()
         
         QuickSort::sort(std::begin(firstPivotCase), std::end(firstPivotCase),
                         QuickSort::firstPivot<typename std::vector<int>::iterator>(),
-                        std::less<int>(), &comparisons_first);
+                        &comparisons_first);
     
         QuickSort::sort(std::begin(lastPivotCase), std::end(lastPivotCase),
                         QuickSort::lastPivot<typename std::vector<int>::iterator>(),
-                        std::less<int>(), &comparisons_last);
+                        &comparisons_last);
     
         QuickSort::sort(std::begin(medianPivotCase), std::end(medianPivotCase),
                         QuickSort::medianOfThreePivot<std::vector<int>::iterator,
                         std::less<int> >(),
-                        std::less<int>(), &comparisons_median);
+                        &comparisons_median);
         
         if (comparisons_median > comparisons_first ||
             comparisons_median > comparisons_last) {

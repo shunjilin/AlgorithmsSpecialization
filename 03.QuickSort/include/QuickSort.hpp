@@ -71,14 +71,14 @@ namespace QuickSort {
               typename Compare = std::less<typename I::value_type> >
     void sort(const I begin, const I end,
               const ChoosePivot choosePivot,
-              const Compare comp = Compare(),
-              unsigned long long *comparisons = nullptr) {
+              unsigned long long *comparisons = nullptr,
+              const Compare comp = Compare()) {
         if (end - begin <= 1) return;
         if (comparisons) *comparisons += end - begin - 1;
         auto pivot = choosePivot(begin, end, comp);
         pivot = partition(begin, end, pivot, comp); 
-        sort(begin, pivot, choosePivot, comp, comparisons);
-        sort(pivot + 1, end, choosePivot, comp, comparisons);
+        sort(begin, pivot, choosePivot, comparisons, comp);
+        sort(pivot + 1, end, choosePivot, comparisons, comp);
     }
 };
 
