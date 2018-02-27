@@ -47,6 +47,6 @@ int main(int argc, char *argv[])
     std::cout << "Number of comparisons is [first pivot] : " << comparisons_first
               << "\nNumber of comparisons is [last pivot] : " << comparisons_last
               << "\nNumber of comparisons is [median of three pivot] : " << comparisons_median
-              << "\nTime taken for 3 sorts is: " << timer.getMs() << " ms\n";
+              << "\nTime taken for 3 sorts is: " << time_taken << " ms\n";
     
 }

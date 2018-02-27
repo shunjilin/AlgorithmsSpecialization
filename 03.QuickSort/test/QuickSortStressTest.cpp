@@ -31,13 +31,8 @@ int main()
                         QuickSort::medianOfThreePivot<std::vector<int>::iterator,
                         std::less<int> >(),
                         &comparisons_median);
-        
-        if (comparisons_median > comparisons_first ||
-            comparisons_median > comparisons_last) {
-            std::cout << "WRONG: number of comparisons\n";
-            break;
-        }
-        else if (!std::is_sorted(std::begin(firstPivotCase),
+
+        if (!std::is_sorted(std::begin(firstPivotCase),
                                  std::end(firstPivotCase))) {
             std::cout << "WRONG: first pivot case not sorted\n";
             break;

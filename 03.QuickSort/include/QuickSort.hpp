@@ -19,7 +19,7 @@ namespace QuickSort {
                                      *three, comp), comp);
         if (*one == median) return one;
         if (*two == median) return two;
-        if (*three == median) return three;
+        return three; // *three == median
     }
     
     template <typename I, typename Compare = std::less<typename I::value_type> >

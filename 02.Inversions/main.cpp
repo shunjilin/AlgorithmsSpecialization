@@ -25,5 +25,5 @@ int main(int argc, char *argv[])
                                               std::end(numbers));
     auto time_taken = timer.getMs();
     std::cout << "Number of inversions: " << inversion_count << "\n"
-              << "Time taken: " << timer.getMs() << "ms\n";
+              << "Time taken: " << time_taken << "ms\n";
 }

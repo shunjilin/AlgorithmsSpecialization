@@ -29,5 +29,5 @@ int main(int argc, char *argv[])
     auto time_taken = timer.getMs();
     std::cout << number_one << " * " << number_two<< " =\n"
               << result  << "\n";
-    std::cout << "Time taken: " << timer.getMs() << "ms\n";
+    std::cout << "Time taken: " << time_taken << "ms\n";
 }
