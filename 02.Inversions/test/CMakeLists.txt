@@ -1,5 +1,3 @@
-include_directories("../include")
-
 add_executable(InversionsUnitTest InversionsUnitTest.cpp)
 add_executable(InversionsStressTest InversionsStressTest.cpp)
 
