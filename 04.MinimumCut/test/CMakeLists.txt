@@ -1,0 +1,5 @@
+add_executable(UnionFindUnitTest UnionFindUnitTest.cpp)
+add_executable(KargersMinCutUnitTest KargersMinCutUnitTest.cpp)
+
+target_link_libraries(UnionFindUnitTest gmock pthread)
+target_link_libraries(KargersMinCutUnitTest gmock pthread)
