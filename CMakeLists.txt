@@ -11,4 +11,4 @@ add_subdirectory(01.Karatsuba)
 add_subdirectory(02.Inversions)
 add_subdirectory(03.QuickSort)
 add_subdirectory(04.MinimumCut)
-
+add_subdirectory(05.StronglyConnectedComponents)
