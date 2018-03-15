@@ -11,3 +11,4 @@ Another attempt at the programming problems from [Algorithms Specialization](htt
 * 03.QuickSort - QuickSort + counting comparisons
 * 04.MinimumCut - Kargers minimum cut algorithm with Union-Find data structure
 * 05.StronglyConnectedComponents - Kosaraju's algorithm
+* 06.ShortestPath - Dijkstra's algorithm for single source shortest paths
