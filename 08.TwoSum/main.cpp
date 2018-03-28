@@ -13,8 +13,6 @@ constexpr long MAX_SUM = 10000;
 
 int main(int argc, char *argv[])
 {
-    SteadyClockTimer timer;
-    timer.start();
     std::vector<long> summands;
     if (argc > 1) {
         std::ifstream ifile(argv[1]);
@@ -33,10 +31,11 @@ int main(int argc, char *argv[])
         std::cerr << "No input given!" << std::endl;
         exit(1);
     }
-    std::cout << "here" << std::endl;
+    SteadyClockTimer timer;
+    timer.start();
+    int num_two_sums = getNumOfTwoSumsInRange(summands, MIN_SUM, MAX_SUM);
     auto time_taken = timer.getMs();
-    std::cout << "Number of two sums is : "
-              << getNumOfTwoSumsInRange(summands, MIN_SUM, MAX_SUM)
-              << "\n";
+    std::cout << "Number of two sums : " 
+              << num_two_sums << "\n";
     std::cout << "Time taken is : " << time_taken << "ms\n";
 }
