@@ -12,3 +12,5 @@ Another attempt at the programming problems from [Algorithms Specialization](htt
 * 04.MinimumCut - Kargers minimum cut algorithm with Union-Find data structure
 * 05.StronglyConnectedComponents - Kosaraju's algorithm
 * 06.ShortestPath - Dijkstra's algorithm for single source shortest paths
+* 07.MedianMaintenance - Running median using min and max heaps
+* 08.TwoSum - 2-SUM algorithm using binary search and a hash table
