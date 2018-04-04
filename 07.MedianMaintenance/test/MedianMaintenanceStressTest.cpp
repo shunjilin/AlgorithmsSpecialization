@@ -21,7 +21,7 @@ struct NaiveMedianMaintenance {
 };
 
 
-int main(int argc, char *argv[])
+int main()
 {
     UniformRandom<unsigned> sequence_size_rng(0, 10000);
     UniformRandom<unsigned> number_rng(0, 10000);

@@ -18,7 +18,7 @@ long getNumOfTwoSumsInRangeNaive(const std::vector<long>& summands,
     return sums.size();
 }
 
-int main(int argc, char *argv[])
+int main()
 {
     UniformRandom<long> min_sum_rng(-1000, 0);
     UniformRandom<long> max_sum_rng(0, 1000);

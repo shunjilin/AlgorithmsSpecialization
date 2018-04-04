@@ -3,6 +3,10 @@
 #include <algorithm>
 
 namespace QuickSort {
+    
+    template <typename T>
+    void ignore(T &&)
+    { }
 
     template <typename I>
     I getMid(const I begin, const I end) {
@@ -26,6 +30,7 @@ namespace QuickSort {
     struct firstPivot {
         I operator()(const I begin, const I end,
                      const Compare comp = Compare()) const {
+            ignore(comp);
             return (begin == end) ? end : begin;
         }
     };
@@ -34,6 +39,7 @@ namespace QuickSort {
     struct lastPivot {
         I operator()(const I begin, const I end,
                      const Compare comp = Compare()) const {
+            ignore(comp);
             return (begin == end) ? end : end-1;
         }
     };

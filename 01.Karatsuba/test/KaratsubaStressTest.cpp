@@ -11,7 +11,7 @@ std::string Multiply(std::string number_one, std::string number_two) {
     return std::to_string(result);
 }
 
-int main(int argc, char *argv[])
+int main()
 {
     UniformRandom<unsigned> rng(0, std::numeric_limits<unsigned>::max());
 

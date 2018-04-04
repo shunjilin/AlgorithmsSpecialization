@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5.1)
 project(AlgorithmsSpecialization)
 
 set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_FLAGS "-Wall -g")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -g")
 
 include_directories(include)
 
