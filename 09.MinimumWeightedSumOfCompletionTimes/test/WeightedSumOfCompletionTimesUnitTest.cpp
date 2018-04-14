@@ -16,7 +16,7 @@ TEST(WeightedSumOfCompletionTimes, ReturnCorrectDifferenceScore) {
 }
 
 TEST(WeightedSumOfCompletionTimes, DifferenceScoreTieBreakCorrect) {
-    std::vector<Job> jobs = {{2, 3}, {3, 2}};
+    std::vector<Job> jobs = {{3, 2}, {2, 1}};
     std::sort(std::begin(jobs), std::end(jobs), DifferenceComparator());
     ASSERT_THAT(jobs[0].weight, 3);
 }
