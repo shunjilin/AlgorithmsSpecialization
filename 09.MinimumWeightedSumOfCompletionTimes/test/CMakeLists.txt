@@ -1,0 +1,3 @@
+add_executable(WeightedSumOfCompletionTimesUnitTest WeightedSumOfCompletionTimesUnitTest.cpp)
+
+target_link_libraries(WeightedSumOfCompletionTimesUnitTest gmock pthread)
