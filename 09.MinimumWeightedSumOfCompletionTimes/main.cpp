@@ -43,5 +43,4 @@ int main(int argc, char *argv[])
               << "\nWeighted sum of completion times by ratio score (optimal) is: "
               << weighted_sum_by_ratio
               << "\nTime taken is : " << time_taken << "ms\n";
-    return 0;
 }

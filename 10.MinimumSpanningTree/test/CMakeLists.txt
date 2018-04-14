@@ -1,0 +1,2 @@
+add_executable(MinimumSpanningTreeUnitTest MinimumSpanningTreeUnitTest.cpp)
+target_link_libraries(MinimumSpanningTreeUnitTest gmock pthread)
