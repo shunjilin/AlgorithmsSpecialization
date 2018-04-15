@@ -4,7 +4,7 @@
 #include <vector>
 #include <queue>
 #include <algorithm>
-#include <set>
+#include <unordered_set>
 #include <limits>
 
 namespace PrimsAlgorithm {
@@ -35,27 +35,15 @@ namespace PrimsAlgorithm {
         }
     };
 
-    struct FrontierNode {
-        unsigned node;
-        Edge edge;
-    };
-    
-    std::priority_queue
-    <Edge, std::vector<Edge>, std::greater<Edge> >
-    initializeFrontier(const Graph& graph) {
-        auto frontier = std::priority_queue<Edge, std::vector<Edge>,
-                                            std::greater<Edge> >();
-        for (auto edge : graph.getEdgesOfNode(0)) {
-            frontier.push(edge);
-        }
-        return frontier;
-    }
-
     void updateFrontier(unsigned node, const Graph& graph,
                         std::priority_queue<Edge, std::vector<Edge>,
-                        std::greater<Edge> >& frontier) {
+                        std::greater<Edge> >& frontier,
+                        const std::unordered_set<unsigned>& closed =
+                        std::unordered_set<unsigned>()) {
         for (auto edge : graph.getEdgesOfNode(node)) {
-            frontier.push(edge);
+            if (closed.find(edge.source) != closed.end()) {
+                frontier.push(edge);
+            }
         }
     }
     
@@ -63,19 +51,25 @@ namespace PrimsAlgorithm {
         auto n_nodes = graph.getNumberOfNodes();
         if (n_nodes == 0) return 0;
         int min_spanning_tree_cost = 0;
-        auto processed_nodes = std::set<unsigned>();
-        processed_nodes.insert(0);
-        auto frontier = initializeFrontier(graph);
+
+        // initialize closed (stores processed nodes) and
+        // frontier (stores potential edges to add to spanning tree)
+        auto closed = std::unordered_set<unsigned>();
+        closed.insert(0);
+        auto frontier = std::priority_queue<Edge, std::vector<Edge>,
+                                            std::greater<Edge> >();
+        updateFrontier(0, graph, frontier, closed);
+        
         while(!frontier.empty()) {
             auto frontier_edge = frontier.top();
             frontier.pop();
-            if (processed_nodes.find(frontier_edge.target) !=
-                processed_nodes.end()) {
+            if (closed.find(frontier_edge.target) !=
+                closed.end()) {
                 continue;
             }
-            processed_nodes.insert(frontier_edge.target);
+            closed.insert(frontier_edge.target);
             min_spanning_tree_cost += frontier_edge.cost;
-            updateFrontier(frontier_edge.target, graph, frontier);
+            updateFrontier(frontier_edge.target, graph, frontier, closed);
         }
         return min_spanning_tree_cost;
     }
