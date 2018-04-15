@@ -35,13 +35,19 @@ namespace PrimsAlgorithm {
         }
     };
 
+
+    bool nodeInClosed(unsigned node,
+                      const std::unordered_set<unsigned>& closed) {
+        return closed.find(node) == closed.end();
+    }
+    
     void updateFrontier(unsigned node, const Graph& graph,
                         std::priority_queue<Edge, std::vector<Edge>,
                         std::greater<Edge> >& frontier,
                         const std::unordered_set<unsigned>& closed =
                         std::unordered_set<unsigned>()) {
         for (auto edge : graph.getEdgesOfNode(node)) {
-            if (closed.find(edge.source) != closed.end()) {
+            if (nodeInClosed(edge.target, closed)) {
                 frontier.push(edge);
             }
         }
@@ -63,13 +69,11 @@ namespace PrimsAlgorithm {
         while(!frontier.empty()) {
             auto frontier_edge = frontier.top();
             frontier.pop();
-            if (closed.find(frontier_edge.target) !=
-                closed.end()) {
-                continue;
+            if (nodeInClosed(frontier_edge.target, closed)) {
+                closed.insert(frontier_edge.target);
+                min_spanning_tree_cost += frontier_edge.cost;
+                updateFrontier(frontier_edge.target, graph, frontier, closed);
             }
-            closed.insert(frontier_edge.target);
-            min_spanning_tree_cost += frontier_edge.cost;
-            updateFrontier(frontier_edge.target, graph, frontier, closed);
         }
         return min_spanning_tree_cost;
     }
