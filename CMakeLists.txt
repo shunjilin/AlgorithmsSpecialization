@@ -6,6 +6,7 @@ set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -g")
 
 include_directories(include)
 
+add_subdirectory(test)
 add_subdirectory(01.Karatsuba)
 add_subdirectory(02.Inversions)
 add_subdirectory(03.QuickSort)
@@ -16,3 +17,5 @@ add_subdirectory(07.MedianMaintenance)
 add_subdirectory(08.TwoSum)
 add_subdirectory(09.MinimumWeightedSumOfCompletionTimes)
 add_subdirectory(10.MinimumSpanningTree)
+add_subdirectory(11.Clustering)
+add_subdirectory(12.ClusteringBig)

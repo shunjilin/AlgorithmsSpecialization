@@ -1,0 +1,2 @@
+add_executable(UnionFindUnitTest UnionFindUnitTest.cpp)
+target_link_libraries(UnionFindUnitTest gmock pthread)

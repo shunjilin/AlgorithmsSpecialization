@@ -1,0 +1,2 @@
+add_executable(ClusteringUnitTest ClusteringUnitTest.cpp)
+target_link_libraries(ClusteringUnitTest gmock pthread)

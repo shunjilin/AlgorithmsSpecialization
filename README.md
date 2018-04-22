@@ -14,3 +14,7 @@ Another attempt at the programming problems from [Algorithms Specialization](htt
 * 06.ShortestPath - Dijkstra's algorithm for single source shortest paths
 * 07.MedianMaintenance - Running median using min and max heaps
 * 08.TwoSum - 2-SUM algorithm using binary search and a hash table
+* 09.MinimumWeightedSumOfCompletionTimes - Greedy scheduling
+* 10.MinimumSpanningTree - Prim's algorithm
+* 11.Clustering - k Clustering using Union-Find data structure
+* 12.ClusteringBig - k Clustering of bitstrings by hamming distances
