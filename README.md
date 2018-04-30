@@ -18,3 +18,5 @@ Another attempt at the programming problems from [Algorithms Specialization](htt
 * 10.MinimumSpanningTree - Prim's algorithm
 * 11.Clustering - k Clustering using Union-Find data structure
 * 12.ClusteringBig - k Clustering of bitstrings by hamming distances
+* 13.HuffmanCoding - Huffman coding for binary coding compression
+* 14.MaxWeightIndependentSet - MWIS using dynamic programming
