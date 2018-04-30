@@ -1,0 +1,4 @@
+add_executable(MaxWeightIndependentSetUnitTest MaxWeightIndependentSetUnitTest.cpp)
+add_executable(MaxWeightIndependentSetStressTest MaxWeightIndependentSetStressTest.cpp)
+
+target_link_libraries(MaxWeightIndependentSetUnitTest gmock pthread)
