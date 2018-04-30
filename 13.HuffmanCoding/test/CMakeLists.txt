@@ -1,0 +1,3 @@
+add_executable(HuffmanCodingUnitTest HuffmanCodingUnitTest.cpp)
+
+target_link_libraries(HuffmanCodingUnitTest gmock pthread)
