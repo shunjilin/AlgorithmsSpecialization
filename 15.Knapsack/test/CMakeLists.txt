@@ -1,0 +1,4 @@
+add_executable(KnapsackUnitTest KnapsackUnitTest.cpp)
+add_executable(KnapsackStressTest KnapsackStressTest.cpp)
+
+target_link_libraries(KnapsackUnitTest gmock pthread)

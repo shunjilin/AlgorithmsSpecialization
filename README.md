@@ -20,3 +20,5 @@ Another attempt at the programming problems from [Algorithms Specialization](htt
 * 12.ClusteringBig - k Clustering of bitstrings by hamming distances
 * 13.HuffmanCoding - Huffman coding for binary coding compression
 * 14.MaxWeightIndependentSet - MWIS using dynamic programming
+* 15.Knapsack - Optimal knapsack value using dynamic programming
+* 16.KnapsackBig - Optimal knapsack value using recursion with memoization
