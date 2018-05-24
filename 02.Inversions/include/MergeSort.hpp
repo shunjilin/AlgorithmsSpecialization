@@ -54,7 +54,7 @@ namespace MergeSort {
     template<typename I >
     unsigned long long sortAndGetInversionCount(const I begin, const I end) {
         unsigned long long inversion_count = 0;
-        sort(begin, end, &inversion_count);
+        MergeSort::sort(begin, end, &inversion_count);
         return inversion_count;
     }
 };

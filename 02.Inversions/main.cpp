@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <vector>
 #include "MergeSort.hpp"
 #include "SteadyClockTimer.hpp"
 

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
+#include <vector>
 #include "QuickSort.hpp"
 #include "SteadyClockTimer.hpp"
 

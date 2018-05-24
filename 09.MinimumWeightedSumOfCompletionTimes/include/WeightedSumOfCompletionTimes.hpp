@@ -4,6 +4,7 @@
 #include <vector>
 #include <iterator>
 #include <algorithm>
+#include <numeric>
 
 namespace WeightedSumOfCompletionTimes {
     struct Job {
