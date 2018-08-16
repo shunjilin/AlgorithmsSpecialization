@@ -2,3 +2,5 @@ add_executable(MedianMaintenanceUnitTest MedianMaintenanceUnitTest.cpp)
 add_executable(MedianMaintenanceStressTest MedianMaintenanceStressTest.cpp)
 
 target_link_libraries(MedianMaintenanceUnitTest gmock pthread)
+
+add_test(MedianMaintenanceUnitTest MedianMaintenanceUnitTest)

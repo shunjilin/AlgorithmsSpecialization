@@ -4,6 +4,9 @@ project(AlgorithmsSpecialization)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -O3")
 
+# ctest
+enable_testing()
+
 include_directories(include)
 
 add_subdirectory(dependencies)

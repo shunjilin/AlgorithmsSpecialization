@@ -2,3 +2,5 @@ add_executable(QuickSortUnitTest QuickSortUnitTest.cpp)
 add_executable(QuickSortStressTest QuickSortStressTest.cpp)
 
 target_link_libraries(QuickSortUnitTest gmock pthread)
+
+add_test(QuickSortUnitTest QuickSortUnitTest)

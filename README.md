@@ -15,14 +15,14 @@ git clone https://github.com/shunjilin/AlgorithmsSpecialization --recurse-submod
 In root folder, make directory ./build
 
 In ./build, run:
-'''
+```
 cmake ..
-'''
+```
 followed by:
-'''
+```
 make
-'''
-To run all tests:
+```
+To run all (unit) tests:
 ```
 ctest --verbose
 ```

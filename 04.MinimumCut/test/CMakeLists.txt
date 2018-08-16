@@ -1,3 +1,5 @@
 add_executable(KargersMinCutUnitTest KargersMinCutUnitTest.cpp)
 
 target_link_libraries(KargersMinCutUnitTest gmock pthread)
+
+add_test(KargersMinCutUnitTest KargersMinCutUnitTest)

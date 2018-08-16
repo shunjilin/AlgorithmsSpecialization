@@ -33,7 +33,7 @@ namespace DynamicProgramming {
         }
         auto MWIS_table = computeMWIS(path);
         int i = path.size();
-        while (i >= 0) {
+        while (i > 0) {
             if (MWIS_table[i-1] >= (MWIS_table[i-2] + path[i-1])) {
                 --i;
             } else {

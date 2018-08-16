@@ -1,3 +1,5 @@
 add_executable(ShortestPathUnitTest ShortestPathUnitTest.cpp)
 
 target_link_libraries(ShortestPathUnitTest gmock pthread)
+
+add_test(ShortestPathUnitTest ShortestPathUnitTest)
