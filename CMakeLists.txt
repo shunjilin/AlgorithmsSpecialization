@@ -2,10 +2,11 @@ cmake_minimum_required(VERSION 3.5.1)
 project(AlgorithmsSpecialization)
 
 set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -g")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -O3")
 
 include_directories(include)
 
+add_subdirectory(dependencies)
 add_subdirectory(test)
 add_subdirectory(01.Karatsuba)
 add_subdirectory(02.Inversions)

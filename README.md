@@ -6,6 +6,29 @@ Another attempt at the programming problems from [Algorithms Specialization](htt
 
 *C++ implementations, CMake and unit tests using Google Test/ Google Mock*
 
+## Cloning the repository
+```
+git clone https://github.com/shunjilin/AlgorithmsSpecialization --recurse-submodules
+```
+
+## Usage
+In root folder, make directory ./build
+
+In ./build, run:
+'''
+cmake ..
+'''
+followed by:
+'''
+make
+'''
+To run all tests:
+```
+ctest --verbose
+```
+
+## Problems
+
 * 01.Karatsuba - O(n^(log2(3)) multiplication algorithm
 * 02.Inversions - Merge sort + counting inversions
 * 03.QuickSort - QuickSort + counting comparisons
