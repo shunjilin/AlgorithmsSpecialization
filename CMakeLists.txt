@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5.1)
 project(AlgorithmsSpecialization)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -O3")
 
 # ctest
@@ -27,3 +27,4 @@ add_subdirectory(13.HuffmanCoding)
 add_subdirectory(14.MaxWeightIndependentSet)
 add_subdirectory(15.Knapsack)
 add_subdirectory(16.KnapsackBig)
+add_subdirectory(17.AllPairsShortestPath)

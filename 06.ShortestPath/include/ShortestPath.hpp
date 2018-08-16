@@ -40,10 +40,12 @@ namespace ShortestPath {
                                          std::vector<FrontierNode>,
                                          std::greater<FrontierNode> >;
 
-    using NodeToShortestPath = std::vector<unsigned>;
-    NodeToShortestPath dijkstra(const Graph& graph, unsigned source_node) {
+    // shortest path distance from source to all other vertice
+    using ShortestPathDistances = std::vector<unsigned>;
+
+    ShortestPathDistances dijkstra(const Graph& graph, unsigned source_node) {
         auto shortest_paths =
-            NodeToShortestPath(graph.size(),
+            ShortestPathDistances(graph.size(),
                                std::numeric_limits<unsigned>::max());
         auto frontier = Frontier();
         shortest_paths[source_node] = 0;
@@ -65,7 +67,7 @@ namespace ShortestPath {
         return shortest_paths;
     }
 
-    NodeToShortestPath
+    ShortestPathDistances
     computeShortestPaths(std::size_t n_nodes, const std::vector<Edge>& edges,
                          unsigned source_node) {
         auto graph = Graph(n_nodes, edges);
