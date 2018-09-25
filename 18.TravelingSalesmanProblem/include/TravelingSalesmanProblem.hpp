@@ -45,14 +45,14 @@ int setBitAtIndex(int bitstring, int index) {
     return bitstring ^ mask;
 }
 
-// get 2d array of euclidean distances between any two vertice
+// get 2d array of euclidean distances between any two vertices
 std::vector< std::vector<double> >
-getEuclideanDistanceTable(std::vector<Vertex> const & vertice) {
+getEuclideanDistanceTable(std::vector<Vertex> const & vertices) {
     auto distances = std::vector< std::vector<double> >
-        (vertice.size(), std::vector<double>(vertice.size()));
-    for (size_t i = 0; i < vertice.size(); ++i) {
-        for (size_t j = 0; j < vertice.size(); ++j) {
-            distances[i][j] = euclideanDistance(vertice[i], vertice[j]);
+        (vertices.size(), std::vector<double>(vertices.size()));
+    for (size_t i = 0; i < vertices.size(); ++i) {
+        for (size_t j = 0; j < vertices.size(); ++j) {
+            distances[i][j] = euclideanDistance(vertices[i], vertices[j]);
         }
     }
     return distances;
@@ -74,41 +74,41 @@ struct Subset {
     }
 };
 
-std::vector<Subset> getTSPSubsets(int n_vertice) {
+std::vector<Subset> getTSPSubsets(int n_vertices) {
     std::vector<Subset> subsets;
-    for (int subset = 0, max = pow(2, n_vertice-1); subset < max; ++subset) {
+    for (int subset = 0, max = pow(2, n_vertices-1); subset < max; ++subset) {
         subsets.emplace_back(Subset(offsetByOneAndSetOne(subset)));
     }
     std::sort(subsets.begin(), subsets.end());
     return subsets;
 }
 
-double getTSPvalue(std::vector<Vertex> const & vertice) {
-    auto n_vertice = vertice.size();
+double getTSPvalue(std::vector<Vertex> const & vertices) {
+    auto n_vertices = vertices.size();
     
-    if (n_vertice < 2) return 0;
+    if (n_vertices < 2) return 0;
 
-    auto distances = getEuclideanDistanceTable(vertice);
+    auto distances = getEuclideanDistanceTable(vertices);
     
-    auto subsets = getTSPSubsets(n_vertice);
+    auto subsets = getTSPSubsets(n_vertices);
 
     // shortest path from i to j that visits ever vertex of subset size k once
     auto table = std::vector< std::vector<double> >
-        (pow(2, n_vertice), std::vector<double>
-         (n_vertice, std::numeric_limits<double>::max()));
+        (pow(2, n_vertices), std::vector<double>
+         (n_vertices, std::numeric_limits<double>::max()));
 
 // base case: shortest path from vertex 0 to 0
     auto base_case_subset = offsetByOneAndSetOne(0);
     table[base_case_subset][0] = 0;
 
     int subset_index = 1;
-    for (size_t subset_size = 2; subset_size <= n_vertice; ++subset_size) {
+    for (size_t subset_size = 2; subset_size <= n_vertices; ++subset_size) {
         while (subsets[subset_index].size == subset_size) {
             auto subset = subsets[subset_index].subset;
-            for (size_t j = 1; j < n_vertice; ++j) { // j is last hop vertex
+            for (size_t j = 1; j < n_vertices; ++j) { // j is last hop vertex
                 auto subset_less_j = setBitAtIndex(subset, j);
                 // shortest path from 1 to k
-                for (size_t k = 0; k < n_vertice; ++k) {
+                for (size_t k = 0; k < n_vertices; ++k) {
                     if (k != j) {
                         auto candidate_value = table[subset_less_j][k] +
                             distances[k][j];
@@ -122,10 +122,10 @@ double getTSPvalue(std::vector<Vertex> const & vertice) {
     }
     
     auto min_value = std::numeric_limits<double>::max();
-    auto & all_vertice_visited = table[pow(2, n_vertice) - 1];
-    for (size_t j = 1; j < n_vertice; ++j) {
+    auto & all_vertices_visited = table[pow(2, n_vertices) - 1];
+    for (size_t j = 1; j < n_vertices; ++j) {
         auto candidate_value =
-            all_vertice_visited[j] + distances[j][0];
+            all_vertices_visited[j] + distances[j][0];
         if (candidate_value < min_value) min_value = candidate_value;
     }
     return min_value;

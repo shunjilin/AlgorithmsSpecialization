@@ -16,24 +16,24 @@ TEST(TSP, getTSPSubsets) {
     ASSERT_THAT(getTSPSubsets(2), ElementsAre(Subset(0b01), Subset(0b11)));
 }
 
-class InitializeVertice : public Test {
+class InitializeVertices : public Test {
 public:
-    std::vector<Vertex> vertice =
+    std::vector<Vertex> vertices =
         std::vector<Vertex>{ Vertex{0, 0}, Vertex{0, 3}, Vertex{3, 3} };
 };
 
-TEST_F(InitializeVertice, CorrectTSPValue) {
-    ASSERT_NEAR(getTSPvalue(vertice), 10.24, 0.01);
+TEST_F(InitializeVertices, CorrectTSPValue) {
+    ASSERT_NEAR(getTSPvalue(vertices), 10.24, 0.01);
 }
 
-class InitializeVertice2 : public Test {
+class InitializeVertices2 : public Test {
 public:
-    std::vector<Vertex> vertice =
+    std::vector<Vertex> vertices =
         std::vector<Vertex>{ Vertex{0, 0}, Vertex{4, 3}, Vertex{4, 0}, Vertex{0, 3} };
 };
 
-TEST_F(InitializeVertice2, CorrectTSPValue) {
-    ASSERT_NEAR(getTSPvalue(vertice), 14, 0.01);
+TEST_F(InitializeVertices2, CorrectTSPValue) {
+    ASSERT_NEAR(getTSPvalue(vertices), 14, 0.01);
 }
 
 int main(int argc, char *argv[])

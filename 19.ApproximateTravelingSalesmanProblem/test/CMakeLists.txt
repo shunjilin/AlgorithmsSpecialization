@@ -1,0 +1,7 @@
+add_executable(ApproximateTravelingSalesmanProblemUnitTest
+  ApproximateTravelingSalesmanProblemUnitTest.cpp)
+
+target_link_libraries(ApproximateTravelingSalesmanProblemUnitTest gmock pthread)
+
+add_test(ApproximateTravelingSalesmanProblemUnitTest
+  ApproximateTravelingSalesmanProblemUnitTest)
