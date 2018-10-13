@@ -48,3 +48,4 @@ ctest --verbose
 * 17.AllPairsShortestPaths - all pairs shortest path with Johnson's algorithm
 * 18.TravelingSalesmanProblem - exact TSP using dynamic programming
 * 19.ApproximateTravelingSalesmanProblem - approximate TSP using nearest neighbor heuristic
+* 20.2SAT - 2SAT by reducing to SCC and using Kosaraju's algorithm
